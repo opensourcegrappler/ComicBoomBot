@@ -6,7 +6,7 @@ def makepic(text,colour,longword):
 
     infile = 'bang.svg'
     outfile = 'outfile.svg'
-    
+    print(text)
     with open(infile) as file: # Use file to refer to the file object
         data = file.readlines()
 
@@ -15,7 +15,8 @@ def makepic(text,colour,longword):
             for line in data:
                 line = re.sub('FOO',text,line.rstrip())
                 line = re.sub('#0000ff',colour,line.rstrip())
-                line = re.sub("font-size=\"16\"","font-size=\"10\"",line.rstrip())
+                if longword==True:
+                    line = re.sub("font-size=\"16\"","font-size=\"10\"",line.rstrip())
             
                 ofile.write(line)
                 
