@@ -39,7 +39,7 @@ class MyStreamListener(tweepy.StreamListener):
         media = api.media_upload("outfile_"+keyword+".png")
  
         # Post tweet with image
-        tweet = "#"+keyword
+        tweet = "@"+status.user.screen_name+" #"+keyword
         post_result = api.update_status(status=tweet, media_ids=[media.media_id], in_reply_to_status_id=status.id)
 
 
