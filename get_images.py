@@ -2,8 +2,8 @@
 
 
 import tweepy
-import wget
-import pathlib
+#import wget
+#import pathlib
 from make import makepic
 
 #import api keys
@@ -49,4 +49,4 @@ class MyStreamListener(tweepy.StreamListener):
 myStreamListener = MyStreamListener
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener())
 
-myStream.filter(track=['@ComicBoomBot'], async=True)
+myStream.filter(track=['@ComicBoomBot'],is_async=True)
